@@ -26,7 +26,14 @@
 #include <sys/ioctl.h>
 #include <netpacket/packet.h> /* For sockaddr_ll */
 #include <linux/filter.h>     /* For BPF filtering */
+#if defined(__clang__)
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdocumentation"
+#endif
 #include <linux/ethtool.h>
+#if defined(__clang__)
+#pragma clang diagnostic pop
+#endif
 #include <linux/sockios.h>
 
 /* Proxy for open */
